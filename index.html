@@ -104,6 +104,41 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
+  .dynamic-section {
+      width: 100%;
+      padding: 80px 20px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+    .dynamic-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .floating-shapes { position: absolute; inset: 0; overflow: hidden; z-index: -1; }
+    .shape {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in-out;
+    }
+    .s1 { top: 10%; left: 15%; animation-duration: 12s; }
+    .s2 { bottom: 15%; right: 10%; animation-duration: 14s; }
+    .s3 { top: 40%; right: 20%; animation-duration: 11s; }
+    .s4 { bottom: 20%; left: 25%; animation-duration: 13s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-40px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+
   </style>
 </head>
 <body>
@@ -119,7 +154,7 @@
   </nav>
   <header style="animation: fadeIn 2s ease;">
     <h1>Aiden Sullivan</h1>
-    <p>Student •  Creator</p>
+    <p>Student • Creator</p>
   </header>
 
   <section>
@@ -177,10 +212,10 @@
   <section id="timeline" class="timeline-section">
     <h2>My Life Timeline</h2>
     <div class="card timeline">
-      <div class="entry"> <span>2007</span> Born into a military family—constant moving shaped who I am. </div>
-      <div class="entry"> <span>2014</span> Started playing baseball and football seriously joined travel ball. </div>
+      <div class="entry"> <span>2007</span> Born into a military family, constant moving shaped who I am. </div>
+      <div class="entry"> <span>2014</span> Started playing baseball seriously joined travel ball. </div>
       <div class="entry"> <span>2019</span> Fell in love with football as well—competitive mindset grew. </div>
-      <div class="entry"> <span>2025</span> Started college at Saint Mary’s new chapter, new grind. </div>
+      <div class="entry"> <span>2025</span> graduated highschool </div>
       <div class="entry"> <span>2025</span> Building future goals, skills, and passions every day. </div>
     </div>
   </section>
@@ -205,7 +240,7 @@
     <h2>Fun Facts About Me</h2>
     <ul>
       <li>I played travel baseball and football for years and loved every second of it.</li>
-      <li>I can eat almost non stop.</li>
+      <li>I can eat a ton of food.</li>
       <li>I’m obsessed with perfecting my skills.</li>
       <li>I learned geometry dash level‑building for fun once.</li>
     </ul>
@@ -221,9 +256,29 @@
     </ul>
   </section>
 
-  <div class="filler">
-    <h2>More Coming Soon</h2>
-    <p>This space will be filled with additional content, animations, or interactive elements.</p>
-  </div>
+  <section class="dynamic-section">
+    <div class="floating-shapes">
+      <div class="shape s1"></div>
+      <div class="shape s2"></div>
+      <div class="shape s3"></div>
+      <div class="shape s4"></div>
+    </div>
+    <h2 class="section-title">More About Me</h2>
+    <p class="section-text">I’m someone who loves learning, creating, and pushing myself — whether in sports, academics, or building cool digital projects. I believe in improvement, dedication, and staying true to who you are.</p>
+  </section>
+<script>
+    const animatedSections = document.querySelectorAll('.panel, .dynamic-section, .timeline-item');
+
+    function revealOnScroll() {
+      const trigger = window.innerHeight * 0.85;
+      animatedSections.forEach(sec => {
+        const rect = sec.getBoundingClientRect().top;
+        if(rect < trigger) sec.classList.add('visible');
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>
