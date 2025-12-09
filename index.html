@@ -29,7 +29,7 @@
     footer { text-align:center; padding:50px 20px; opacity:0.7; background:#111; }
 
     @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    @keyframes slideUp { from{opacity:0; transform: translateY(40px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes slideUp { from{opacity:0; transform: translateY(0);} to{opacity:1; transform:translateY(0);} }
   .timeline-section { background:#0b0b0b; margin-top:60px; border-radius:20px; box-shadow:0 0 25px rgba(0,0,0,0.6); }
     .timeline { display:flex; flex-direction:column; gap:20px; }
     .entry { background:#131313; padding:20px; border-left:4px solid #7597de; border-radius:10px; opacity:0; transform:translateY(30px); transition:0.8s ease; }
@@ -81,7 +81,7 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
       backdrop-filter: blur(6px);
       animation: fadeUp 1s ease forwards;
-      opacity: 0;
+      opacity: 1;
     }
     .panel h2 {
       font-size: 2.2rem;
@@ -100,7 +100,7 @@
     }
 
     @keyframes fadeUp {
-      from { transform: translateY(40px); opacity: 0; }
+      from { transform: translateY(0); opacity: 1; }
       to { transform: translateY(0); opacity: 1; }
     }
 
@@ -111,8 +111,8 @@
       color: #fff;
       position: relative;
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(40px);
+      opacity: 1;
+      transform: translateY(0);
       transition: 0.8s ease;
     }
     .dynamic-section.visible {
@@ -144,8 +144,8 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       padding: 60px 20px;
-      opacity: 0;
-      transform: translateY(40px);
+      opacity: 1;
+      transform: translateY(0);
       transition: 0.8s ease;
     }
     .feature-grid.visible { opacity: 1; transform: translateY(0); }
@@ -162,8 +162,8 @@
   .click-section {
       padding: 60px 20px;
       text-align: center;
-      opacity: 0;
-      transform: translateY(40px);
+      opacity: 1;
+      transform: translateY(0);
       transition: 0.8s ease;
     }
     .click-section.visible { opacity: 1; transform: translateY(0); }
@@ -210,7 +210,7 @@
   <section>
     <h2>About Me</h2>
     <div class="card">
-      <p>Hey! I'm Aiden Sullivan — an 18-year-old college student at Saint Mary's College of California. I grew up in a military family and played travel baseball and football throughout my childhood until college. I'm passionate about learning, creating projects, and improving myself every day. I'm also exploring future educational opportunities and new interests along the way.</p>
+      <p>Hey! I'm Aiden Sullivan — an 18-year-old college student at Saint Mary's College of California. I grew up in a military family and played travel baseball and football through high school. I'm passionate about learning, creating projects, and improving myself every day. I'm also exploring future educational opportunities and new interests along the way.</p>
     </div>
   </section>
 
@@ -262,11 +262,11 @@
   <section id="timeline" class="timeline-section">
     <h2>My Life Timeline</h2>
     <div class="card timeline">
-      <div class="entry"> <span>2007</span> Born into a military family constant moving shaped who I am. </div>
+      <div class="entry"> <span>2007</span> Born into a military family—constant moving shaped who I am. </div>
       <div class="entry"> <span>2014</span> Started playing baseball and football seriously joined travel ball. </div>
       <div class="entry"> <span>2019</span> Fell in love with football as well—competitive mindset grew. </div>
       <div class="entry"> <span>2025</span> Graduated high school finished strong. </div>
-      <div class="entry"> <span>2025</span> Started college at Saint Mary’s new chapter, new grind. </div>
+      <div class="entry"> <span>2025</span> Started college at Saint Mary’s; new chapter, new grind. </div>
       <div class="entry"> <span>2025</span> Building future goals, skills, and passions every day. </div>
     </div>
   </section>
