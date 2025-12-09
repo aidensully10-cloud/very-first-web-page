@@ -6,44 +6,61 @@
   <title>Aiden Sullivan • Personal Website</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #0d0d0d; color: #f5f5f5; }
-    header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #2b1055, #7597de); }
-    header h1 { font-size: 3rem; margin: 0; }
-    header p { font-size: 1.2rem; opacity: 0.9; }
+    header { padding: 90px 20px; text-align: center; background: linear-gradient(135deg, #2b1055, #7597de); }
+    header h1 { font-size: 3.3rem; margin: 0; }
+    header p { font-size: 1.3rem; opacity: 0.9; }
 
-    section style="animation: slideUp 1.2s ease;" { padding: 60px 20px; max-width: 900px; margin: auto; }
-    h2 { font-size: 2.2rem; border-left: 6px solid #7597de; padding-left: 15px; }
+    .navbar { position:fixed; top:0; left:0; width:100%; padding:15px 30px; background:rgba(0,0,0,0.65); backdrop-filter:blur(6px); display:flex; justify-content:space-between; align-items:center; z-index:1000; }
+    .logo { margin:0; font-size:1.6rem; }
+    .nav-links a { margin:0 18px; color:white; text-decoration:none; font-size:1rem; }
+    .menu-btn { display:none; font-size:2rem; cursor:pointer; }
 
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    @media (max-width: 750px) {
+      .nav-links { display:none; flex-direction:column; background:#111; position:absolute; top:60px; right:0; width:200px; padding:20px; border-radius:0 0 0 15px; }
+      .nav-links a { margin:10px 0; }
+      .menu-btn { display:block; }
     }
 
-    .skills span {
-      display: inline-block;
-      background: #333;
-      padding: 8px 14px;
-      margin: 6px;
-      border-radius: 8px;
-      font-size: 0.9rem;
+    section { padding: 80px 20px; max-width: 1000px; margin: auto; animation: slideUp 1.2s ease; }
+    h2 { font-size: 2.4rem; border-left: 6px solid #7597de; padding-left: 15px; }
+
+    .card { background: #1a1a1a; padding: 25px; border-radius: 14px; margin-top: 20px; box-shadow: 0 0 18px rgba(0,0,0,0.4); }
+
+    footer { text-align:center; padding:50px 20px; opacity:0.7; background:#111; }
+
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideUp { from{opacity:0; transform: translateY(40px);} to{opacity:1; transform:translateY(0);} }
+  .timeline-section { background:#0b0b0b; margin-top:60px; border-radius:20px; box-shadow:0 0 25px rgba(0,0,0,0.6); }
+    .timeline { display:flex; flex-direction:column; gap:20px; }
+    .entry { background:#131313; padding:20px; border-left:4px solid #7597de; border-radius:10px; opacity:0; transform:translateY(30px); transition:0.8s ease; }
+    .entry span { font-weight:bold; color:#7597de; display:block; margin-bottom:6px; }
+    .show { opacity:1 !important; transform:translateY(0) !important; }
+  .divider {
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(90deg, #2b1055, #7597de, #2b1055);
+      mask: url('https://www.svgrepo.com/show/353685/wave.svg') repeat-x;
+      -webkit-mask: url('https://www.svgrepo.com/show/353685/wave.svg') repeat-x;
+      animation: waveMove 6s linear infinite;
+      opacity: 0.5;
     }
 
-    footer { text-align: center; padding: 40px 20px; background: #111; font-size: 0.9rem; opacity: 0.7; }
-  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-    @keyframes slideUp { from { opacity:0; transform: translateY(40px);} to { opacity:1; transform:translateY(0);} }
+    @keyframes waveMove {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 0; }
+    }
   </style>
 </head>
 <body>
-  <nav style="position:fixed; top:0; left:0; width:100%; padding:15px 30px; background:rgba(0,0,0,0.65); backdrop-filter:blur(6px); display:flex; justify-content:space-between; align-items:center; z-index:1000;">
-    <h2 style="margin:0; font-size:1.4rem; color:#fff;">Aiden</h2>
-    <div>
-      <a href="#about" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">About</a>
-      <a href="#interests" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">Interests</a>
-      <a href="#skills" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">Skills</a>
-      <a href="#contact" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">Contact</a>
+  <nav class="navbar">
+    <h2 class="logo">Aiden</h2>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#interests">Interests</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
   </nav>
   <header style="animation: fadeIn 2s ease;">
     <h1>Aiden Sullivan</h1>
@@ -57,6 +74,8 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <section>
     <h2>My Interests</h2>
     <div class="card">
@@ -68,6 +87,8 @@
       </ul>
     </div>
   </section>
+
+  <div class="divider"></div>
 
   <section>
     <h2>Skills</h2>
@@ -81,6 +102,8 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <section>
     <h2>Contact</h2>
     <div class="card">
@@ -90,8 +113,39 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <footer>
     © 2025 Aiden Sullivan — All Rights Reserved
   </footer>
+
+  <section id="timeline" class="timeline-section">
+    <h2>My Life Timeline</h2>
+    <div class="card timeline">
+      <div class="entry"> <span>2007</span> Born into a military family—constant moving shaped who I am. </div>
+      <div class="entry"> <span>2014</span> Started playing baseball seriously; joined travel ball. </div>
+      <div class="entry"> <span>2019</span> Fell in love with football as well—competitive mindset grew. </div>
+      <div class="entry"> <span>2023</span> Graduated high school; finished final all‑stars season. </div>
+      <div class="entry"> <span>2024</span> Started college at Saint Mary’s; new chapter, new grind. </div>
+      <div class="entry"> <span>2025</span> Building future goals, skills, and passions every day. </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll("section, .entry").forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
