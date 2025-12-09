@@ -1,38 +1,97 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <Title>Aiden's homepage</Title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aiden Sullivan • Personal Website</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #0d0d0d; color: #f5f5f5; }
+    header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #2b1055, #7597de); }
+    header h1 { font-size: 3rem; margin: 0; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
+
+    section style="animation: slideUp 1.2s ease;" { padding: 60px 20px; max-width: 900px; margin: auto; }
+    h2 { font-size: 2.2rem; border-left: 6px solid #7597de; padding-left: 15px; }
+
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #333;
+      padding: 8px 14px;
+      margin: 6px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    footer { text-align: center; padding: 40px 20px; background: #111; font-size: 0.9rem; opacity: 0.7; }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes slideUp { from { opacity:0; transform: translateY(40px);} to { opacity:1; transform:translateY(0);} }
+  </style>
 </head>
 <body>
-<h1>Welcome to my webpage!</h1>
-  <h2>Something about me</h2>
-  Hi, I am Aiden. I am pursuing a Computer Science major at Saint Mary's College in Moraga, CA.
-  <br/>
-  <img src="IMG_SMC.jpeg" width="300">
-  <h2>Hobbies:</h2>
-  Some of my hobbies are:
-  <ul>
-    <li>Sports</li>
-    <li>Working out</li>
-    <li>Eating good food</li>
-    <li>Playing video games</li>
-    <li>Boxing</li>
-    <li>Football training with siblings</li>
-  </ul>
-  
-  <h2>Classes that I am taking in Fall 2025</h2>
-  <ol>
-    <li>CS 102 - Digital Literacy</li>
-    <li>Math 136 - Applied Math for Scientists</li>
-    <li>Writ 101 - Writing as Inquiry</li>
-    <li>Econ 101 - Microeconomic Principles</li>
-  </ol>
-  <a href="https://selfservice.stmarys-ca.edu/Student/Planning">Look at my class schedule here.</a>
-  <h1>My Campus</h1>
-  <iframe width="600" height="450" src="https://www.youtube.com/embed/tJ5DNJMb44o" title="Your Journey Begins Here!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4175.224765916741!2d-122.1124351385482!3d37.84047557512098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f884cd1042763%3A0xf4af4d5ec8f1ac3d!2sSaint%20Mary&#39;s%20College%20of%20California!5e1!3m2!1sen!2sus!4v1759863752354!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <style>
-   body {
-      background-color: #FFFDD0;
-    }
-    </style>
+  <nav style="position:fixed; top:0; left:0; width:100%; padding:15px 30px; background:rgba(0,0,0,0.65); backdrop-filter:blur(6px); display:flex; justify-content:space-between; align-items:center; z-index:1000;">
+    <h2 style="margin:0; font-size:1.4rem; color:#fff;">Aiden</h2>
+    <div>
+      <a href="#about" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">About</a>
+      <a href="#interests" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">Interests</a>
+      <a href="#skills" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">Skills</a>
+      <a href="#contact" style="margin:0 15px; color:white; text-decoration:none; font-size:1rem;">Contact</a>
+    </div>
+  </nav>
+  <header style="animation: fadeIn 2s ease;">
+    <h1>Aiden Sullivan</h1>
+    <p>Student • Athlete • Creator</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Hey! I'm Aiden Sullivan — an 18-year-old college student at Saint Mary's College of California. I grew up in a military family and played travel baseball and all‑stars throughout high school. I'm passionate about learning, creating projects, and improving myself every day. I'm also exploring future educational opportunities and new interests along the way.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>My Interests</h2>
+    <div class="card">
+      <ul>
+        <li>Sports & athletics (especially baseball)</li>
+        <li>Tech, apps, and building projects</li>
+        <li>Music and gaming</li>
+        <li>College life + self‑development</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="card skills">
+      <span>Communication</span>
+      <span>Leadership</span>
+      <span>Teamwork</span>
+      <span>Creative Projects</span>
+      <span>Writing</span>
+      <span>Problem Solving</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email (personal): <strong>aidensully1.0@gmail.com</strong></p>
+      <p>Email (school): <strong>ams93@stmarys-ca.edu</strong></p>
+      <p>Location: Moraga, CA</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Aiden Sullivan — All Rights Reserved
+  </footer>
 </body>
+</html>
