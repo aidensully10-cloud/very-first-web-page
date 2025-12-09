@@ -49,6 +49,61 @@
       from { background-position: 0 0; }
       to { background-position: 1000px 0; }
     }
+  .filler {
+      width: 100%;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(4px);
+      margin-top: 40px;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .filler h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .filler p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+  .panel {
+      width: 100%;
+      padding: 40px;
+      margin: 40px 0;
+      background: rgba(255,255,255,0.03);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+    }
+    .panel h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+    .panel ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .panel li {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #ddd;
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
   </style>
 </head>
 <body>
@@ -70,7 +125,7 @@
   <section>
     <h2>About Me</h2>
     <div class="card">
-      <p>Hey! I'm Aiden Sullivan — an 18-year-old college student at Saint Mary's College of California. I grew up in a military family and played travel baseball and all‑stars throughout high school. I'm passionate about learning, creating projects, and improving myself every day. I'm also exploring future educational opportunities and new interests along the way.</p>
+      <p>Hey! I'm Aiden Sullivan — an 18-year-old college student at Saint Mary's College of California. I grew up in a military family and played travel baseball and football throughout middle and high school. I'm passionate about learning, creating projects, and improving myself every day. I'm also exploring future educational opportunities and new interests along the way.</p>
     </div>
   </section>
 
@@ -123,10 +178,9 @@
     <h2>My Life Timeline</h2>
     <div class="card timeline">
       <div class="entry"> <span>2007</span> Born into a military family—constant moving shaped who I am. </div>
-      <div class="entry"> <span>2014</span> Started playing baseball seriously; joined travel ball. </div>
+      <div class="entry"> <span>2014</span> Started playing baseball and football seriously joined travel ball. </div>
       <div class="entry"> <span>2019</span> Fell in love with football as well—competitive mindset grew. </div>
-      <div class="entry"> <span>2023</span> Graduated high school; finished final all‑stars season. </div>
-      <div class="entry"> <span>2024</span> Started college at Saint Mary’s; new chapter, new grind. </div>
+      <div class="entry"> <span>2025</span> Started college at Saint Mary’s new chapter, new grind. </div>
       <div class="entry"> <span>2025</span> Building future goals, skills, and passions every day. </div>
     </div>
   </section>
@@ -147,5 +201,29 @@
 
     document.querySelectorAll("section, .entry").forEach(el => observer.observe(el));
   </script>
+  <section id="fun-facts" class="panel">
+    <h2>Fun Facts About Me</h2>
+    <ul>
+      <li>I played travel baseball and football for years and loved every second of it.</li>
+      <li>I can eat almost non stop.</li>
+      <li>I’m obsessed with perfecting my skills.</li>
+      <li>I learned geometry dash level‑building for fun once.</li>
+    </ul>
+  </section>
+
+  <section id="achievements" class="panel">
+    <h2>My Achievements</h2>
+    <ul>
+      <li>Graduated high school with strong academic and athletic involvement.</li>
+      <li>Played competitive travel baseball and football through youth.</li>
+      <li>Currently attending Saint Mary’s College of California.</li>
+      <li>Building technical and creative projects — websites, games, essays.</li>
+    </ul>
+  </section>
+
+  <div class="filler">
+    <h2>More Coming Soon</h2>
+    <p>This space will be filled with additional content, animations, or interactive elements.</p>
+  </div>
 </body>
 </html>
