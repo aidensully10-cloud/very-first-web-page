@@ -139,6 +139,26 @@
       100% { transform: translateY(0) rotate(360deg); }
     }
 
+  .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+    .feature-grid.visible { opacity: 1; transform: translateY(0); }
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+      transition: 0.5s ease;
+    }
+    .feature-card:hover { transform: translateY(-10px); }
+
   </style>
 </head>
 <body>
@@ -160,7 +180,7 @@
   <section>
     <h2>About Me</h2>
     <div class="card">
-      <p>Hey! I'm Aiden Sullivan — an 18-year-old college student at Saint Mary's College of California. I grew up in a military family and played travel baseball and football throughout middle and high school. I'm passionate about learning, creating projects, and improving myself every day. I'm also exploring future educational opportunities and new interests along the way.</p>
+      <p>Hey! I'm Aiden Sullivan — an 18-year-old college student at Saint Mary's College of California. I grew up in a military family and played travel baseball and football all the way through high school. I'm passionate about learning, creating projects, and improving myself every day. I'm also exploring future educational opportunities and new interests along the way.</p>
     </div>
   </section>
 
@@ -212,10 +232,11 @@
   <section id="timeline" class="timeline-section">
     <h2>My Life Timeline</h2>
     <div class="card timeline">
-      <div class="entry"> <span>2007</span> Born into a military family, constant moving shaped who I am. </div>
-      <div class="entry"> <span>2014</span> Started playing baseball seriously joined travel ball. </div>
-      <div class="entry"> <span>2019</span> Fell in love with football as well—competitive mindset grew. </div>
-      <div class="entry"> <span>2025</span> graduated highschool </div>
+      <div class="entry"> <span>2007</span> Born into a military family constant moving shaped who I am. </div>
+      <div class="entry"> <span>2014</span> Started playing baseball and football seriously joined travel ball. </div>
+      <div class="entry"> <span>2019</span> Fell in love with football as well as my competitive mindset grew. </div>
+      <div class="entry"> <span>2025</span> Graduated high school </div>
+      <div class="entry"> <span>2025</span> Started college at Saint Mary’s new chapter, new grind. </div>
       <div class="entry"> <span>2025</span> Building future goals, skills, and passions every day. </div>
     </div>
   </section>
@@ -252,7 +273,7 @@
       <li>Graduated high school with strong academic and athletic involvement.</li>
       <li>Played competitive travel baseball and football through youth.</li>
       <li>Currently attending Saint Mary’s College of California.</li>
-      <li>Building technical and creative projects — websites, games, essays.</li>
+      <li>Building technical and creative projects  websites, games, essays.</li>
     </ul>
   </section>
 
@@ -264,7 +285,22 @@
       <div class="shape s4"></div>
     </div>
     <h2 class="section-title">More About Me</h2>
-    <p class="section-text">I’m someone who loves learning, creating, and pushing myself — whether in sports, academics, or building cool digital projects. I believe in improvement, dedication, and staying true to who you are.</p>
+    <p class="section-text">I’m someone who loves learning, creating, and pushing myself whether in sports, academics, or building digital projects. Scroll down and you'll see more animations revealing parts of my story.</p>
+  </section>
+
+  <section class="feature-grid">
+    <div class="feature-card">
+      <h3>My Interests</h3>
+      <p>Football, baseball, creative tech, music, writing, and building things that actually look clean and modern.</p>
+    </div>
+    <div class="feature-card">
+      <h3>My Goals</h3>
+      <p>Keep improving my craft, finish college strong, and create projects that represent who I am.</p>
+    </div>
+    <div class="feature-card">
+      <h3>My Style</h3>
+      <p>Minimalistic, smooth, dark-themed aesthetics with motion everywhere — because static websites are boring.</p>
+    </div>
   </section>
 <script>
     const animatedSections = document.querySelectorAll('.panel, .dynamic-section, .timeline-item');
